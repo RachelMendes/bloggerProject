@@ -122,8 +122,8 @@ default="normal normal 100% tahoma,garamond,helvetica,Sans-serif"
   value="normal normal 100% tahoma,garamond,helvetica,Sans-serif">
 <Variable name="footerTextFont" description="Footer Text Font"
 type="font" 
-default="normal normal 80% tahoma,garamond,helvetica,Sans-serif" 
-  value="normal normal 80% tahoma,garamond,helvetica,Sans-serif">
+default="normal normal 100% arial, tahoma, garamond, helvetica, Sans-serif" 
+  value="normal normal 100% arial, tahoma, garamond, helvetica, Sans-serif">
 */
 
 /* -----   GLOBAL   ----- */
@@ -168,7 +168,6 @@ a, a:visited{
 }
 
 a:hover{
-	text-decoration: underline;
 	color: $mainHoverLinkColor;
 }
 
@@ -316,11 +315,15 @@ h2.date-header {
 
 .footer {
 	margin: 0px;
-	padding: 10px;
+	padding: 12px;
 	text-align: center;
 	color: $footerTextColor;
 	font: $footerTextFont;
 	line-height: 1.2em;
+}
+
+.footer a, .footer a:visited, .footer a:hover{
+	color: $footerTextColor;
 }
 
 .classe{}
@@ -715,9 +718,22 @@ h2.date-header {
 	  
       <div id='footer-wrapper'>
         <b:section class='footer' id='footer'>
-          <b:widget id='Text1' locked='false' title='Todos os direitos reservados' type='Text'/>
+          <b:widget id='Text1' locked='false' title='' type='Text'>
+            <b:includable id='main'>
+			  <!-- only display title if it's non-empty -->
+              <b:if cond='data:title != &quot;&quot;'>
+                <h2 class='title'><data:title/></h2>
+              </b:if>
+              <div class='widget-content'>
+                <data:content/>
+              </div>
+              <b:include name='quickedit'/>
+            </b:includable>
+          </b:widget>
         </b:section>
-      </div> <!-- end footer -->
+      </div> <!-- end footer -->	  
+	  
+	  
 	  
     </div> <!-- end wrap2 -->
   </div> <!-- end outer-wrapper -->
