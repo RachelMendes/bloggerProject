@@ -73,7 +73,7 @@ function createSummaryAndThumb(pID){
     border-top: 1px dotted #E5E5E5;	
 	width: 100%;
     padding: 0;
-	margin-bottom: 12px;
+	margin-bottom: 15px;
 }
 
 .posts-thumb { /* Style for the small posts thumbnails */
@@ -91,6 +91,11 @@ h2.date-header {
 
 .post h3 {
     text-align: center;
+}
+
+.summary {
+	padding: 0px 10px;
+    padding-bottom: 15%;      
 }
 
 #Blog1{
@@ -290,7 +295,7 @@ a:hover{
 
 h2.date-header {
 	margin: 0px;
-	padding: 10px;
+	padding: 30px 2% 0;		
 	text-align: left;
 	color: $dateHeaderColor;
 	font: $dateHeaderFont;	
