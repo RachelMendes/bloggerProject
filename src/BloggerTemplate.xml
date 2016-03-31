@@ -95,7 +95,8 @@ h2.date-header {
 
 .summary {
 	padding: 0px 10px;
-    padding-bottom: 15%;      
+    padding-bottom: 15%;    
+    border-top: 1px dotted #E5E5E5;		
 }
 
 #Blog1{
@@ -170,12 +171,16 @@ type="color" default="#ff9999" value="#ff9999"> //mod
 type="color" default="#ddddff" value="#ddddff">
 <Variable name="sidebarHoverLinkColor" description="Sidebar Hover Link Color"
 type="color" default="#ffdddd" value="#ffdddd">
+
+<Variable name="postfooterTitleColor" description="Post-Footer Title Color"
+type="color" default="#e6b3cc" value="#e6b3cc">
 <Variable name="postfooterTextColor" description="Post-Footer Text Color"
 type="color" default="#aaaaaa" value="#aaaaaa">
 <Variable name="postfooterLinkColor" description="Post-Footer Link Color"
 type="color" default="#dddddd" value="#dddddd">
 <Variable name="commentTextColor" description="Comment Text Color"
 type="color" default="#555555" value="#777777">
+
 <Variable name="footerTextColor" description="Footer Text Color"
 type="color" default="#dddddd" value="#dddddd">
 
@@ -216,6 +221,10 @@ type="font"
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
   value="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif">
 
+<Variable name="postfooterTitleFont" description="Post-Footer Title Font"
+type="font"
+default="normal bold 140% verdana, tahoma, garamond, helvetica, Sans-serif"
+  value="normal bold 140% verdana, tahoma, garamond, helvetica, Sans-serif">  
 <Variable name="postfooterAuthorFont" description="Post-Footer Author Font"
 type="font"
 default="normal bold 130% verdana, tahoma, garamond, helvetica, Sans-serif"
@@ -322,10 +331,30 @@ h2.date-header {
 	font: $postTitleFont;
 }
 
+/* -----   COMMENT   ----- */
+
+#comments{
+	margin: 0 auto;
+	padding: 10px;
+	width: 90%;	
+	border-top: 1px dotted #E5E5E5;
+}
+
+#comments .post-footer-title{
+	padding-bottom: 12px;
+	color: $postfooterTitleColor;
+	font: $postfooterTitleFont;
+}
+
+#comments .comment-author{
+	margin: 10px 0px;
+	color: $postfooterLinkColor;
+	font: $postfooterAuthorFont;
+}
+
 #comments-block{
-	margin:1em 0 1.5em;
-	line-height:1.6em;
-//	border: 1px solid white;
+	padding-left: 26px;
+	line-height: 1.6em;
 	color: $postfooterTextColor;
 	font: $postfooterTextFont;
 }
@@ -337,17 +366,32 @@ h2.date-header {
 	border-bottom: 1px dotted #E5E5E5;	
 }
 
-#comments{
-	border-top: 1px dotted #E5E5E5;
-	width: 90%;
-	margin: 0 auto;
-	padding: 10px;
+#comments-block .avatar-image-container{
+    width: 50px;
+    height: 50px;
+    left: -45px;
+    position: absolute;
 }
 
-#comments .comment-author {
-	margin: 10px 0px;
-	color: $postfooterLinkColor;
-	font: $postfooterAuthorFont;
+.comments .avatar-image-container{
+	max-width: 50px;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.comments .avatar-image-container img{
+    max-width: 50px;
+}
+
+.avatar-image-container{
+//	background: url(http://1.bp.blogspot.com/_7wsQzULWIwo/SxL-DRXzmWI/AAAAAAAACY0/d1g3ymxGLEQ/s400/avatar.gif);
+	border: 1px solid transparent;
+    border-radius: 50px;
+}
+
+.delayLoad{
+	width: 100%;
+	height: 100%;
 }
 
 .comment-form{
@@ -355,7 +399,7 @@ h2.date-header {
 	line-height:1.4em;
 	text-transform:uppercase;
 	letter-spacing:.1em;
-//	border: 3px solid violet;		
+	border: 3px solid violet;		
 }
 
 /* -----   SIDEBAR   ----- */
@@ -761,17 +805,20 @@ h2.date-header {
                 <div class='comments' id='comments'>
                   <a name='comments'/>
                   <b:if cond='data:post.allowComments'>
-                    <h4>
+                    <h4 class="post-footer-title">
                       <b:if cond='data:post.numComments == 1'>
-                        1 <data:commentLabel/>:
+                        1 Comentário:
                       <b:else/>
                         <data:post.numComments/> <data:commentLabelPlural/>:
                       </b:if>
                     </h4>
-                    <dl id='comments-block'>
+                    <dl expr:class='data:post.avatarIndentClass' id='comments-block'>
                       <b:loop values='data:post.comments' var='comment'>
                         <dt class='comment-author' expr:id='"comment-" + data:comment.id'>
                           <a expr:name='"comment-" + data:comment.id'/>
+						  <b:if cond='data:blog.enabledCommentProfileImages'>
+						    <data:comment.authorAvatarImage/>
+						  </b:if>
                           <b:if cond='data:comment.authorUrl'>
                             <a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a>
                           <b:else/>
