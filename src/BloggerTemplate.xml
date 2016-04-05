@@ -254,14 +254,14 @@ body{
 	margin: 0 auto;
 	padding: 0px;
 	width: 90%;
-	background-color: $outerBgColor;
+//	background-color: $outerBgColor;
 }
 
 #content-wrapper{
 	margin: 0px;
 	padding: 0px;
 	position: relative;
-	background-color: $contentBgColor;
+//	background-color: $contentBgColor;
 }
 
 .clear{
@@ -287,7 +287,8 @@ a:hover{
 	margin: 0px;
 	padding: 0px;
 	position: relative;
-	background-color: $headerBgColor;
+//	background-color: $headerBgColor;
+	border-bottom: 1px dotted #E5E5E5;		
 }
 
 #header a img{
@@ -302,7 +303,7 @@ a:hover{
 	padding: 0px;
 	float: left;
 	width: 80%;
-	background-color: $mainBgColor; 	
+//	background-color: $mainBgColor; 	
 	display: inline; /* handles IE margin bug */
 	word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
 	overflow: hidden; /* fix for long non-text content breaking IE sidebar float */
@@ -335,22 +336,20 @@ h2.date-header {
 
 #comments{
 	margin: 0 auto;
-	padding: 10px;
+	padding-top: 10px;
 	width: 90%;	
 	border-top: 1px dotted #E5E5E5;
 }
 
-#comments .post-footer-title{
-	padding-bottom: 12px;
+#comments h4{ 
 	color: $postfooterTitleColor;
 	font: $postfooterTitleFont;
 }
 
-#comments .comment-author{
-	margin: 10px 0px;
+ #comments .user{
 	color: $postfooterLinkColor;
 	font: $postfooterAuthorFont;
-}
+} 
 
 #comments-block{
 	padding-left: 26px;
@@ -373,19 +372,36 @@ h2.date-header {
     position: absolute;
 }
 
+.comments .comments-content .icon.blog-author{
+    display: inline;
+    margin: 0px; 
+	height: 0px;
+}
+
+.comments .comments-content .comment{
+    margin-bottom: 6px;
+}
+
 .comments .avatar-image-container{
-	max-width: 50px;
+    max-width: 50px;
     max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;	
+    left: -10px;
+	position: absolute;
     overflow: hidden;
 }
 
 .comments .avatar-image-container img{
-    max-width: 50px;
+	max-width: 50px;
+    max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;	
 }
 
 .avatar-image-container{
-//	background: url(http://1.bp.blogspot.com/_7wsQzULWIwo/SxL-DRXzmWI/AAAAAAAACY0/d1g3ymxGLEQ/s400/avatar.gif);
-	border: 1px solid transparent;
+	background: url(http://1.bp.blogspot.com/_7wsQzULWIwo/SxL-DRXzmWI/AAAAAAAACY0/d1g3ymxGLEQ/s400/avatar.gif);
+	border: none;
     border-radius: 50px;
 }
 
@@ -394,12 +410,44 @@ h2.date-header {
 	height: 100%;
 }
 
+.datetime{
+	padding: 0px;
+	display: block;
+	font: $postfooterTextFont;
+}
+
+.comment-block{
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #E5E5E5;
+}
+
+.continue{
+	display: block;
+}
+
 .comment-form{
 	padding: 12px 0px 0px 0px;
 	margin: 0px;
 	line-height: 1.4em;
-	text-transform: uppercase;
 	max-height: 250px;	
+}
+
+#comment-editor{
+	min-height: 228px;
+}
+
+#bc_0_3I{
+	display: block !important;
+}
+
+#bc_0_3I a, #bc_0_3I a:visited, #bc_0_3I a:hover{
+	cursor: default;
+	padding: 22px 0px 10px 10px;
+	text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.4em;	
+	color: $postfooterTitleColor;
+	font: $postfooterTitleFont;	
 }
 
 /* -----   SIDEBAR   ----- */
@@ -409,14 +457,14 @@ h2.date-header {
 	margin: 0px;
 	padding-top: 10px;
 	width: 20%;
-	background-color: $sidebarBgColor;
+//	background-color: $sidebarBgColor;
 	display: inline; /* handles IE margin bug */
 	word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
 	overflow: hidden; /* fix for long non-text content breaking IE sidebar float */
 }
 
 .sidebar ul{
-	margin: 0px 0px 50px 0px;
+	margin: 0px 0px 30px 0px;
 	padding: 0px 12px;
 	list-style-type: none;
 	line-height: 1.4em;
@@ -457,8 +505,9 @@ h2.date-header {
 
 #Profile1 {
 	margin: 0px;
-	padding: 0px;
+	padding: 12px 0px 0px 0px;
 	color: $sidebarTextColor;
+	border-top: 1px dotted #E5E5E5;	
 }
 
 #Profile1 h2 {
@@ -491,7 +540,8 @@ h2.date-header {
 #footer-wrapper {
 	margin: 0px;
 	padding: 0px;
-	background-color: $footerBgColor;
+//	background-color: $footerBgColor;
+	border-top: 1px dotted #E5E5E5;
 }
 
 .footer {
@@ -878,9 +928,21 @@ h2.date-header {
 					
                     <b:include data='post' name='post'/>
                     
-					<b:if cond='data:blog.pageType == "item"'>
-                      <b:include data='post' name='comments'/>
-                    </b:if>
+						<b:if cond='data:blog.pageType == &quot;static_page&quot;'> 
+						  <b:if cond='data:post.showThreadedComments'> 
+							<b:include data='post' name='threaded_comments'/> 
+						  <b:else/> 
+							<b:include data='post' name='comments'/> 
+						  </b:if> 
+						</b:if> 
+						<b:if cond='data:blog.pageType == &quot;item&quot;'> 
+						  <b:if cond='data:post.showThreadedComments'> 
+							<b:include data='post' name='threaded_comments'/> 
+						  <b:else/> 
+						  <b:include data='post' name='comments'/> 
+						  </b:if> 
+						</b:if>
+						
                   </b:loop>
                   <data:adEnd/>
                 </div>
