@@ -270,6 +270,52 @@ body{
 	height: 0;
 }
 
+#blog-pager{
+	clear: both;
+	margin: 0 0 1em;	
+	text-align: center;
+}
+
+#blog-pager-newer-link a, #blog-pager-newer-link a:visited{
+	padding: 3px 8px;	
+	display: inline-block;
+	text-align: center;		
+	text-decoration: none;
+	border-radius: 25px;
+	border: 2px solid $mainBgColor;
+	color: $sidebarLinkColor;	
+	background-color: $mainBgColor;
+	font: $postfooterTextFont;
+}
+
+#blog-pager-older-link a, #blog-pager-older-link a:visited{
+	padding: 3px 8px;	
+	display: inline-block;
+	text-align: center;		
+	text-decoration: none;
+	border-radius: 25px;
+	border: 2px solid $mainBgColor;
+	color: $sidebarLinkColor;	
+	background-color: $mainBgColor;
+	font: $postfooterTextFont;
+}
+
+#blog-pager-newer-link a:hover{
+	text-decoration: none;
+	color: $mainBgColor;
+	background-color: $sidebarLinkColor;
+}
+
+#blog-pager-older-link a:hover{
+	text-decoration: none;
+	color: $mainBgColor;
+	background-color: $sidebarLinkColor;
+}
+
+.home-link{
+	display: none;
+}
+
 /* global link attributes */
 
 a, a:visited{
@@ -607,6 +653,10 @@ h2.date-header {
 }
 
 /* -----  MISCELLANEOUS ----- */  
+
+.feed-links{
+	margin-bottom: 10px;
+}
 
 /* -----   PROFILE   ----- */
 
