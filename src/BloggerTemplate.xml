@@ -56,6 +56,8 @@ function createSummaryAndThumb(pID){
 //]]>
 </script>
 
+
+
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
   <b:if cond='data:blog.pageType != &quot;item&quot;'>
     <style type='text/css'>
@@ -106,6 +108,50 @@ h2.date-header {
 
 #blog-pager {
     clear: both;
+	margin: 30px auto;
+    padding-top: 30px !important;
+	text-align: center; 
+	padding: 7px;	
+}
+
+.blog-pager {
+	background: none;
+}
+
+.displaypageNum a, .displaypageNum a:visited, 
+.showpage a, .showpage a:visited, .pagecurrent{
+	padding: 3px 7px;
+	margin-right: 4px;
+	margin-left: 4px;
+	color: #ddddff;
+	background-color: #792120;
+	border: 1px solid #792120;
+}
+
+.displaypageNum a:hover, .showpage a:hover, .pagecurrent{
+	text-decoration: none;
+	color: #792120;
+	background-color: #ddddff;
+}
+
+.showpageOf{
+	display: none !important;
+}
+
+#blog-pager .showpage, #blog-pager .pagecurrent{
+	font-weight: bold;
+}
+
+#blog-pager .pages{
+	border: none;
+}
+
+.lastpage, .firstpage{
+	display: none;
+}
+
+#blog-pager-newer-link, #blog-pager-older-link, .home-link{
+	display: none;
 }
 
     </style>
@@ -155,7 +201,7 @@ type="color" default="#ffffff" value="#ffffff">
 <Variable name="postTitleColor" description="Post Title Color"
 type="color" default="#ffffff" value="#ffffff">
 <Variable name="textColor" description="Text Color"
-type="color" default="#846baf" value="#846baf">  //mod
+type="color" default="#846baf" value="#ffffff">  //mod
 <Variable name="blogQuoteColor" description="Blog Quote Color"
 type="color" default="#ffffff" value="#ffffff">
 <Variable name="mainLinkColor" description="Link Color"
@@ -1200,5 +1246,23 @@ h2.date-header {
     </div> <!-- end wrap2 -->
   </div> <!-- end outer-wrapper -->
 
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+  <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+    <script type='text/javascript'>
+      /*<![CDATA[*/
+      var perPage=6;
+      var numPages=3;
+      var firstText ='First';
+      var lastText ='Last';
+      var prevText ='«';
+      var nextText ='»';
+      var urlactivepage=location.href;
+      var home_page="/";
+      /*]]>*/
+    </script>
+    <script src="http://helplogger.googlecode.com/svn/trunk/page-navigation2.js"/>
+  </b:if>
+</b:if>  
+  
 </body>
 </html>	  
