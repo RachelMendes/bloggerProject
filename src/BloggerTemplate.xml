@@ -69,6 +69,7 @@ function createSummaryAndThumb(pID){
 	display: item-list;
     border-top: 1px dotted #E5E5E5; /* border for the small posts */
     overflow: hidden;
+	background-color: #000000;
 }
 
 .post-body img{
@@ -93,11 +94,12 @@ h2.date-header {
 
 .post h3 {
     text-align: center;
+	margin: 18px;
 }
 
 .summary {
-	padding: 0px 10px;
-    padding-bottom: 15%;    
+	padding: 10px 10px 0;
+    min-height: 200px;    
     border-top: 1px dotted #E5E5E5;		
 }
 
@@ -124,13 +126,13 @@ h2.date-header {
 	margin-right: 4px;
 	margin-left: 4px;
 	color: #ddddff;
-	background-color: #792120;
-	border: 1px solid #792120;
+	background-color: #bf273f;
+	border: 1px solid #bf273f;
 }
 
 .displaypageNum a:hover, .showpage a:hover, .pagecurrent{
 	text-decoration: none;
-	color: #792120;
+	color: #bf273f;
 	background-color: #ddddff;
 }
 
@@ -174,7 +176,7 @@ March/16
 ======================== 
 
 <Variable name="bodyBgColor" description="Body Background Color"
-type="color" default="#bc6262" value="#bc6262">  //mod
+type="color" default="#bc6262" value="#5d122c">  //mod
 <Variable name="outerBgColor" description="Outer Background Color"
 type="color" default="#fae5b0" value="#fae5b0">  //mod
 <Variable name="headerBgColor" description="Header Background Color"
@@ -182,7 +184,7 @@ type="color" default="#550b0c" value="#550b0c">  //mod
 <Variable name="contentBgColor" description="Content Background Color"
 type="color" default="#923c3d" value="#923c3d">  //mod
 <Variable name="mainBgColor" description="Main Background Color"
-type="color" default="#792120" value="#792120">  //mod
+type="color" default="#792120" value="#bf273f">  //mod
 <Variable name="postBgColor" description="Post Background Color"
 type="color" default="#000000" value="#000000">
 <Variable name="commentbgColor" description="Comment Background Color"
@@ -292,7 +294,8 @@ body{
 	margin: 0px;
 	padding: 0px;
 	color: $textColor;
-	background-color: $bodyBgColor;
+	background-image: url("http://i1121.photobucket.com/albums/l501/InuzukaGirl_1/tile%20103.jpg");
+//	background-color: $bodyBgColor;
 	font: $textFont;
 }
 
@@ -376,16 +379,18 @@ a:hover{
 /* -----   HEADER   ----- */
 
 #header-wrapper{
-	margin: 0px;
+	margin: 0px 0px 10px;
 	padding: 0px;
 	position: relative;
 //	background-color: $headerBgColor;
 	border-bottom: 1px dotted #E5E5E5;		
 }
 
-#header a img{
-	margin: 0px;
-	padding-left: 30px;
+#header a img {
+    margin: 20px 0px 10px 0px;
+    padding-left: 65px;
+	width: 260px;
+	height: 200px;
 }
 
 /* -----   MAIN   ----- */
@@ -414,11 +419,10 @@ h2.date-header {
 	padding: 10px;
 	line-height: 1.5em;
 	text-align: justify;
-	background-color: $postBgColor;
+//	background-color: $postBgColor;
 }
 
 .post h3 {
-	margin: 0px;
 	padding-bottom: 20px;
 	color: $postTitleColor;
 	font: $postTitleFont;
@@ -488,7 +492,7 @@ h2.date-header {
 }
 
 .comments .continue a, .comments .continue a:visited,
-.comments .continue a:hover{
+.comments .continue a:hover, #comment-post-message{
 	padding: 0px;
 	padding-top: 22px;
 	cursor: default;
@@ -632,16 +636,9 @@ h2.date-header {
 	max-height: 235px;
 }
 
-#comment-editor-src{
+#comment-editor-src, .comment-footer, 
+.comment-form, .comment-form p{
 	display: none;
-}
-
-.comment-footer{
-	display: none;
-}
-
-.comment-form p{
-  	display: none;
 }
 
 .comment-form{
