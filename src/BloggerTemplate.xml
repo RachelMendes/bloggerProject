@@ -13,8 +13,8 @@
 <title><data:blog.pageTitle/></title>
 
 <script type='text/javascript'>
-  posts_no_thumb_sum = 190;
-  posts_thumb_sum = 140;
+  posts_no_thumb_sum = 200;
+  posts_thumb_sum = 200;
   img_thumb_height = 200;
   img_thumb_width = 265;
 </script>
@@ -65,15 +65,15 @@ function createSummaryAndThumb(pID){
 .post { /* Styles for the small posts container */
     float: left;
     width: 28%;
-    height: 260px;
-	display: item-list;
+    height: 265px;
+//	display: list-item;
     border-top: 1px dotted #E5E5E5; /* border for the small posts */
     overflow: hidden;
-	background-color: #000000;
+//	background-color: #2c3350;
 }
 
 .post-body img{
-    border-top: 1px dotted #E5E5E5;	
+    border-top: 4px solid #666699;	
 	width: 100%;
     padding: 0;
 	margin-bottom: 15px;
@@ -94,13 +94,19 @@ h2.date-header {
 
 .post h3 {
     text-align: center;
-	margin: 18px;
+//	margin: 18px;
+	margin-top: 10px;
+	font: normal bold 130% georgia,verdana,'Trebuchet MS',cambria,Sans-serif;
+}
+
+.post-title a:hover{
+	color: #fbcbcb;
 }
 
 .summary {
 	padding: 10px 10px 0;
     min-height: 200px;    
-    border-top: 1px dotted #E5E5E5;		
+    border-top: 4px solid #666699;		
 }
 
 #Blog1{
@@ -125,7 +131,7 @@ h2.date-header {
 	padding: 3px 7px;
 	margin-right: 4px;
 	margin-left: 4px;
-	color: #ddddff;
+	color: #fbcbcb;
 	background-color: #bf273f;
 	border: 1px solid #bf273f;
 }
@@ -133,7 +139,7 @@ h2.date-header {
 .displaypageNum a:hover, .showpage a:hover, .pagecurrent{
 	text-decoration: none;
 	color: #bf273f;
-	background-color: #ddddff;
+	background-color: #fbcbcb;
 }
 
 .showpageOf{
@@ -175,79 +181,39 @@ March/16
 /* Variable definitions
 ======================== 
 
-<Variable name="bodyBgColor" description="Body Background Color"
-type="color" default="#bc6262" value="#5d122c">  //mod
-<Variable name="outerBgColor" description="Outer Background Color"
-type="color" default="#fae5b0" value="#fae5b0">  //mod
-<Variable name="headerBgColor" description="Header Background Color"
-type="color" default="#550b0c" value="#550b0c">  //mod
-<Variable name="contentBgColor" description="Content Background Color"
-type="color" default="#923c3d" value="#923c3d">  //mod
-<Variable name="mainBgColor" description="Main Background Color"
-type="color" default="#792120" value="#bf273f">  //mod
-<Variable name="postBgColor" description="Post Background Color"
-type="color" default="#000000" value="#000000">
-<Variable name="commentbgColor" description="Comment Background Color"
-type="color" default="#333333" value="#333333">
-<Variable name="sidebarBgColor" description="Sidebar Background Color"
-type="color" default="#550b0c" value="#550b0c">  //mod
-<Variable name="footerBgColor" description="Footer Background Color"
-type="color" default="#550b0c" value="#550b0c">  //mod
 
-<Variable name="blogTitleColor" description="Blog Title Color"
-type="color" default="#ffffff" value="#ffffff">
-<Variable name="blogDescriptionColor" description="Blog Description Color"
-type="color" default="#ffffff" value="#ffffff">
-<Variable name="dateHeaderColor" description="Date Header Color"
-type="color" default="#ffffff" value="#ffffff">
 <Variable name="postTitleColor" description="Post Title Color"
+type="color" default="#666699" value="#666699">
+<Variable name="mainTextColor" description="TextColor DateHeaderColor BlogQuoteColor"
 type="color" default="#ffffff" value="#ffffff">
-<Variable name="textColor" description="Text Color"
-type="color" default="#846baf" value="#ffffff">  //mod
-<Variable name="blogQuoteColor" description="Blog Quote Color"
-type="color" default="#ffffff" value="#ffffff">
-<Variable name="mainLinkColor" description="Link Color"
-type="color" default="#47476b" value="#47476b">  //mod
-<Variable name="mainHoverLinkColor" description="Hover Link Color"
-type="color" default="#e0e0eb" value="#e0e0eb">	//mod
-
-<Variable name="sidebarHeaderColor" description="Sidebar Header Color"
-type="color" default="#ffffff" value="#ffffff">
-<Variable name="sidebarTextColor" description="Sidebar Text Color"
-type="color" default="#ff9999" value="#ff9999"> //mod
-<Variable name="sidebarLinkColor" description="Sidebar Link Color"
-type="color" default="#ddddff" value="#ddddff">
-<Variable name="sidebarHoverLinkColor" description="Sidebar Hover Link Color"
-type="color" default="#ffdddd" value="#ffdddd">
-
+<Variable name="footerTextColor" description="FooterTextColor Post-Footer Link Color"
+type="color" default="#dddddd" value="#dddddd">
 <Variable name="postfooterTitleColor" description="Post-Footer Title Color"
 type="color" default="#e6b3cc" value="#e6b3cc">
-<Variable name="postfooterTextColor" description="Post-Footer Text Color"
-type="color" default="#aaaaaa" value="#aaaaaa">
-<Variable name="postfooterLinkColor" description="Post-Footer Link Color"
-type="color" default="#dddddd" value="#dddddd">
 <Variable name="commentTextColor" description="Comment Text Color"
-type="color" default="#555555" value="#777777">
+type="color" default="#aaaaaa" value="#aaaaaa">
+<Variable name="sidebarTextColor" description="Sidebar Text Color"
+type="color" default="#ff9999" value="#ff9999">
+<Variable name="buttonColor" description="Button Color"
+type="color" default="#bf273f" value="#bf273f">
+<Variable name="buttonLinkColor" description="Button Link Color"
+type="color" default="#fbcbcb" value="#fbcbcb">
+<Variable name="mainLinkColor" description="Link Color"
+type="color" default="#8e8ebf" value="#8e8ebf">
+<Variable name="mainHoverLinkColor" description="Hover Link Color"
+type="color" default="#e0e0eb" value="#e0e0eb">
+<Variable name="dotColor" description="Border Dotted Color"
+type="color" default="#e5e5e5" value="#e5e5e5">
 
-<Variable name="footerTextColor" description="Footer Text Color"
-type="color" default="#dddddd" value="#dddddd">
 
-<Variable name="blogTitleFont" description="Blog Title Font"
-type="font"
-default="normal bold 250% 'bolts sf','commerce sf bold',georgia,Times, serif" 
-  value="normal bold 248% 'bolts sf','commerce sf bold',Georgia, Times, serif">
-<Variable name="blogDescriptionFont" description="Blog Description Font"
-type="font"
-default="normal normal 120% impact,'commerce sf bold',verdana,Georgia, serif" 
-  value="normal normal 120% impact,'commerce sf bold',verdana,Georgia, serif">
 <Variable name="dateHeaderFont" description="Date Header Font"
 type="font" 
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
-  value="normal normal 104% verdana,tahoma,garamond,helvetica,Sans-serif">
+  value="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif">
 <Variable name="postTitleFont" description="Post Title Font"
 type="font" 
-default="normal bold 130% georgia,verdana,'Trebuchet MS',cambria,Sans-serif" 
-  value="normal bold 130% georgia,verdana,'Trebuchet MS',cambria,Sans-serif">
+default="normal bold 200% georgia,verdana,'Trebuchet MS',cambria,Sans-serif" 
+  value="normal bold 200% georgia,verdana,'Trebuchet MS',cambria,Sans-serif">
 <Variable name="textFont" description="Text Font"
 type="font" 
 default="normal normal 75% verdana,arial,times,'Trebuchet MS',Sans-serif" 
@@ -256,19 +222,10 @@ default="normal normal 75% verdana,arial,times,'Trebuchet MS',Sans-serif"
 type="font" 
 default="italic normal 100% verdana,arial,times,'Trebuchet MS',Sans-serif" 
   value="italic normal 100% verdana,arial,times,'Trebuchet MS',Sans-serif">
-<Variable name="sidebarHeaderFont" description="Sidebar Header Font"
-type="font" 
-default="normal bold 110% verdana,tahoma,Times,'Arial Black',Times,Arial,Verdana" 
-  value="normal bold 121% verdana,tahoma,Times,'Arial Black',Times,Arial,Verdana">
-<Variable name="sidebarTextFont" description="Sidebar Text Font"
-type="font" 
-default="normal normal 72% verdana,arial,times,'Trebuchet MS',Sans-serif" 
-  value="normal normal 72% verdana,arial,times,'Trebuchet MS',Sans-serif">
 <Variable name="postfooterTextFont" description="Post-Footer Text Font"
 type="font" 
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
   value="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif">
-
 <Variable name="postfooterTitleFont" description="Post-Footer Title Font"
 type="font"
 default="normal bold 140% verdana, tahoma, garamond, helvetica, Sans-serif"
@@ -277,7 +234,6 @@ default="normal bold 140% verdana, tahoma, garamond, helvetica, Sans-serif"
 type="font"
 default="normal bold 130% verdana, tahoma, garamond, helvetica, Sans-serif"
   value="normal bold 130% verdana, tahoma, garamond, helvetica, Sans-serif">
-  
 <Variable name="commentTextFont" description="Comment Text Font"
 type="font" 
 default="normal normal 100% tahoma,garamond,helvetica,Sans-serif" 
@@ -293,9 +249,8 @@ default="normal normal 100% arial, tahoma, garamond, helvetica, Sans-serif"
 body{
 	margin: 0px;
 	padding: 0px;
-	color: $textColor;
+	color: $mainTextColor;
 	background-image: url("http://i1121.photobucket.com/albums/l501/InuzukaGirl_1/tile%20103.jpg");
-//	background-color: $bodyBgColor;
 	font: $textFont;
 }
 
@@ -303,14 +258,12 @@ body{
 	margin: 0 auto;
 	padding: 0px;
 	width: 90%;
-//	background-color: $outerBgColor;
 }
 
 #content-wrapper{
 	margin: 0px;
 	padding: 0px;
 	position: relative;
-//	background-color: $contentBgColor;
 }
 
 .clear{
@@ -321,44 +274,46 @@ body{
 
 #blog-pager{
 	clear: both;
-	margin: 0 0 1em;	
+	margin: 0 0 1em;
 	text-align: center;
 }
 
 #blog-pager-newer-link a, #blog-pager-newer-link a:visited{
+	margin-left: 5em;
 	padding: 3px 8px;	
 	display: inline-block;
 	text-align: center;		
 	text-decoration: none;
 	border-radius: 25px;
-	border: 2px solid $mainBgColor;
-	color: $sidebarLinkColor;	
-	background-color: $mainBgColor;
+	border: 2px solid $buttonColor;
+	color: $buttonLinkColor;	
+	background-color: $buttonColor;
 	font: $postfooterTextFont;
 }
 
 #blog-pager-older-link a, #blog-pager-older-link a:visited{
+	margin-right: 5em;
 	padding: 3px 8px;	
 	display: inline-block;
 	text-align: center;		
 	text-decoration: none;
 	border-radius: 25px;
-	border: 2px solid $mainBgColor;
-	color: $sidebarLinkColor;	
-	background-color: $mainBgColor;
+	border: 2px solid $buttonColor;
+	color: $buttonLinkColor;	
+	background-color: $buttonColor;
 	font: $postfooterTextFont;
 }
 
 #blog-pager-newer-link a:hover{
 	text-decoration: none;
-	color: $mainBgColor;
-	background-color: $sidebarLinkColor;
+	color: $buttonColor;
+	background-color: $buttonLinkColor;
 }
 
 #blog-pager-older-link a:hover{
 	text-decoration: none;
-	color: $mainBgColor;
-	background-color: $sidebarLinkColor;
+	color: $buttonColor;
+	background-color: $buttonLinkColor;
 }
 
 .home-link{
@@ -382,8 +337,7 @@ a:hover{
 	margin: 0px 0px 10px;
 	padding: 0px;
 	position: relative;
-//	background-color: $headerBgColor;
-	border-bottom: 1px dotted #E5E5E5;		
+	border-bottom: 1px dotted $dotColor;		
 }
 
 #header a img {
@@ -399,8 +353,7 @@ a:hover{
 	margin: 0px;
 	padding: 0px;
 	float: left;
-	width: 80%;
-//	background-color: $mainBgColor; 	
+	width: 80%;	
 	display: inline; /* handles IE margin bug */
 	word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
 	overflow: hidden; /* fix for long non-text content breaking IE sidebar float */
@@ -410,7 +363,7 @@ h2.date-header {
 	margin: 0px;
 	padding: 30px 2% 0;		
 	text-align: left;
-	color: $dateHeaderColor;
+	color: $mainTextColor;
 	font: $dateHeaderFont;	
 }
 
@@ -419,13 +372,18 @@ h2.date-header {
 	padding: 10px;
 	line-height: 1.5em;
 	text-align: justify;
-//	background-color: $postBgColor;
 }
 
 .post h3 {
 	padding-bottom: 20px;
-	color: $postTitleColor;
+}
+
+.post-title{
 	font: $postTitleFont;
+}
+
+.post-title a{
+	color: $postTitleColor;
 }
 
 /* -----   COMMENT   ----- */
@@ -446,12 +404,12 @@ h2.date-header {
 	margin-top: 30px;
 	margin-bottom: 0px;
 	width: 90%;
-	border-top: 1px dotted #E5E5E5;
+	border-top: 1px dotted $dotColor;
 }
 
 .comments .comments-content{
 	line-height: 1.6em;
-	color: $postfooterTextColor;
+	color: $commentTextColor;
 }
 
 .comments .comments-content .comment .continue{
@@ -470,9 +428,9 @@ h2.date-header {
 	text-align: center;		
 	text-decoration: none;
 	border-radius: 25px;
-	border: 2px solid $mainBgColor;
-	color: $sidebarLinkColor;	
-	background-color: $mainBgColor;
+	border: 2px solid $buttonColor;
+	color: $buttonLinkColor;	
+	background-color: $buttonColor;
 	font: $postfooterTextFont;
 }
 
@@ -528,7 +486,7 @@ h2.date-header {
 
 .comments .comments-content .comment{
 	padding-bottom: 0px;
-	border-bottom: 1px dotted #E5E5E5;	
+	border-bottom: 1px dotted $dotColor;	
 }
 
 .comments .comments-content .comment:first-child{
@@ -545,12 +503,12 @@ h2.date-header {
 }
 
 .comments .comments-content .user{	
-	color: $postfooterLinkColor;
+	color: $footerTextColor;
 	font: $postfooterAuthorFont;
 }
 
 .comments .comments-content .user a{
-	color: $postfooterLinkColor;
+	color: $footerTextColor;
 }
 
 .comments .comments-content .user a:hover {
@@ -636,9 +594,16 @@ h2.date-header {
 	max-height: 235px;
 }
 
-#comment-editor-src, .comment-footer, 
-.comment-form, .comment-form p{
+#comment-editor-src{
 	display: none;
+}
+
+.comment-footer{
+	display: none;
+}
+
+.comment-form p{
+  	display: none;
 }
 
 .comment-form{
@@ -653,7 +618,6 @@ h2.date-header {
 	margin: 0px;
 	padding-top: 10px;
 	width: 20%;
-//	background-color: $sidebarBgColor;
 	display: inline; /* handles IE margin bug */
 	word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
 	overflow: hidden; /* fix for long non-text content breaking IE sidebar float */
@@ -669,37 +633,56 @@ h2.date-header {
 .sidebar ul li{
 	display: block;
 	text-decoration: none;
-	color: $sidebarLinkColor;
+	color: $buttonLinkColor;
 	margin: 12px 0px;
 	padding: 0;
 	border-radius: 25px;
-	border: 2px solid $mainBgColor;
+	border: 2px solid $buttonColor;
 	text-align: center;
-	background-color: $mainBgColor;
+	background-color: $buttonColor;
 	line-height: 2.5em;
 }
 
 .sidebar ul li:hover{
 	text-decoration: none;
-	color: $mainBgColor;
-	background-color: $sidebarLinkColor;
+	color: $buttonColor;
+	background-color: $buttonLinkColor;
 }
 
 .sidebar ul li a, .sidebar ul li a:visited{
 	display: block;
-	color: $sidebarLinkColor;
+	color: $buttonLinkColor;
 }
 
 .sidebar ul li a:hover{
-	color: $mainBgColor;
+	color: $buttonColor;
 	text-decoration: none;
 }
 
 /* -----  MISCELLANEOUS ----- */  
 
 .feed-links{
+	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
+blockquote{
+	border-left: 6px solid $dotColor;
+	padding: 0.5em 10px;
+	color: $mainTextColor;
+	font: $quoteFont;  
+}
+
+blockquote p{
+  display: inline;
+}
+
+.post blockquote cite {
+	position: relative;
+	display: block;
+	margin-top: 5px;
+	color: $commentTextColor;
+} 
 
 /* -----   PROFILE   ----- */
 
@@ -707,7 +690,7 @@ h2.date-header {
 	margin: 0px;
 	padding: 12px 0px 0px 0px;
 	color: $sidebarTextColor;
-	border-top: 1px dotted #E5E5E5;	
+	border-top: 1px dotted $dotColor;	
 }
 
 #Profile1 h2 {
@@ -740,8 +723,7 @@ h2.date-header {
 #footer-wrapper {
 	margin: 0px;
 	padding: 0px;
-//	background-color: $footerBgColor;
-	border-top: 1px dotted #E5E5E5;
+	border-top: 1px dotted $dotColor
 }
 
 .footer {
