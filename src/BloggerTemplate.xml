@@ -13,8 +13,8 @@
 <title><data:blog.pageTitle/></title>
 
 <script type='text/javascript'>
-  posts_no_thumb_sum = 200;
-  posts_thumb_sum = 200;
+  posts_no_thumb_sum = 140;
+  posts_thumb_sum = 140;
   img_thumb_height = 200;
   img_thumb_width = 265;
 </script>
@@ -65,7 +65,7 @@ function createSummaryAndThumb(pID){
 .post { /* Styles for the small posts container */
     float: left;
     width: 28%;
-    height: 265px;
+    height: 268px;
     border-top: 1px dotted #E5E5E5; /* border for the small posts */
     overflow: hidden;
 }
@@ -74,7 +74,7 @@ function createSummaryAndThumb(pID){
     border-top: 4px solid #666699;	
 	width: 100%;
     padding: 0;
-	margin-bottom: 15px;
+	margin-bottom: 12px;
 }
 
 .posts-thumb { /* Style for the small posts thumbnails */
@@ -93,7 +93,7 @@ h2.date-header {
 .post h3 {
     text-align: center;
 	margin-top: 10px;
-	font: normal bold 124% georgia,verdana,'Trebuchet MS',cambria,Sans-serif;
+	font: normal bold 16px georgia,verdana,'Trebuchet MS',cambria,Sans-serif;
 }
 
 .post-title a:hover{
@@ -106,7 +106,8 @@ h2.date-header {
 
 .summary {
 	padding: 10px 10px 0;
-    min-height: 200px;    
+    min-height: 200px;
+	max-height: 200px; 
     border-top: 4px solid #666699;		
 }
 
@@ -255,16 +256,16 @@ default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif"
   value="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif">
 <Variable name="postTitleFont" description="Post Title Font"
 type="font" 
-default="normal bold 200% georgia,verdana,'Trebuchet MS',cambria,Sans-serif" 
-  value="normal bold 200% georgia,verdana,'Trebuchet MS',cambria,Sans-serif">
+default="normal bold 24px georgia,verdana,'Trebuchet MS',cambria,Sans-serif" 
+  value="normal bold 24px georgia,verdana,'Trebuchet MS',cambria,Sans-serif">
 <Variable name="postTextFont" description="Post Text Font" 
 type="font"
-default="normal normal 110% Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif"
-  value="normal normal 110% Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif">
+default="normal normal 16px Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif"
+  value="normal normal 16px Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif">
 <Variable name="quoteFont" description="Blog Quote Font"
 type="font" 
-default="italic normal 90% verdana,arial,times,'Trebuchet MS',Sans-serif" 
-  value="italic normal 90% verdana,arial,times,'Trebuchet MS',Sans-serif">
+default="italic normal 80% verdana,arial,times,'Trebuchet MS',Sans-serif" 
+  value="italic normal 80% verdana,arial,times,'Trebuchet MS',Sans-serif">
 <Variable name="postfooterTextFont" description="Post-Footer Text Font"
 type="font" 
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
@@ -736,11 +737,14 @@ blockquote p{
 .field{
 	display: inline;
 	color: $postTitleColor;
+	font-weight: bold;
 }
 
 .rodape{
 	display: inline-block;
+	margin: 0px;
 	padding: 0.5em 10px;
+	border: 1px dotted $dotColor;
 	color: $mainTextColor;
 	font: $quoteFont;	
 }
