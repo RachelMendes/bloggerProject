@@ -176,7 +176,29 @@ h2.date-header {
 }
 
 .post{
-	font: normal normal 120% Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif;
+	font: normal normal 120% Arvo, &#39;Josefin Sans&#39;, Georgia, Allerta,Sans-serif;
+}
+
+.post h3 {
+    padding-left: 5%;
+}
+
+.staticDiv{
+	width: 90%;
+    padding-left: 5%;	
+	overflow: auto;
+}
+
+.staticDiv img{
+	float: right;
+}
+
+.staticText{
+    max-width: 78%;
+}
+
+#aboutText{
+    float: left;
 }
 
  </style>
@@ -603,7 +625,7 @@ h2.date-header {
 }
 
 .avatar-image-container{
-	background: url(http://1.bp.blogspot.com/_7wsQzULWIwo/SxL-DRXzmWI/AAAAAAAACY0/d1g3ymxGLEQ/s400/avatar.gif);
+	background: url(http://i1121.photobucket.com/albums/l501/InuzukaGirl_1/RM%20Anocircnimo_2.jpg);
 	border: none;
     border-radius: 50px;
 }
