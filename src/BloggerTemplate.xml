@@ -263,8 +263,8 @@ default="normal normal 110% Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif"
   value="normal normal 110% Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif">
 <Variable name="quoteFont" description="Blog Quote Font"
 type="font" 
-default="italic normal 100% verdana,arial,times,'Trebuchet MS',Sans-serif" 
-  value="italic normal 100% verdana,arial,times,'Trebuchet MS',Sans-serif">
+default="italic normal 90% verdana,arial,times,'Trebuchet MS',Sans-serif" 
+  value="italic normal 90% verdana,arial,times,'Trebuchet MS',Sans-serif">
 <Variable name="postfooterTextFont" description="Post-Footer Text Font"
 type="font" 
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
@@ -731,6 +731,18 @@ blockquote p{
 	display: block;
 	margin-top: 5px;
 	color: $commentTextColor;
+}
+
+.field{
+	display: inline;
+	color: $postTitleColor;
+}
+
+.rodape{
+	display: inline-block;
+	padding: 0.5em 10px;
+	color: $mainTextColor;
+	font: $quoteFont;	
 }
   
 /* -----   PROFILE   ----- */
