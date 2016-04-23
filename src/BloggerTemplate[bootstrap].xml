@@ -67,7 +67,7 @@ function createSummaryAndThumb(pID){
 
 .post { /* Styles for the small posts container */
     float: left;
-    width: 28%;
+    width: 30%;
     height: 268px;
     border-top: 1px dotted #E5E5E5; /* border for the small posts */
     overflow: hidden;
@@ -116,7 +116,8 @@ h2.date-header {
 
 #Blog1{
 	margin: 0 auto;
-	padding: 14px 32px;
+	padding-top: 14px;
+//	padding: 14px 32px;
 }
 
 #blog-pager {
@@ -179,16 +180,12 @@ h2.date-header {
 	display: none;
 }
 
-.post{
-	font: normal normal 120% Arvo, &#39;Josefin Sans&#39;, Georgia, Allerta,Sans-serif;
-}
-
 .post h3 {
     padding-left: 5%;
 }
 
 .staticDiv{
-	width: 90%;
+//	width: 90%;
     padding-left: 5%;	
 	overflow: auto;
 }
@@ -198,7 +195,7 @@ h2.date-header {
 }
 
 .staticText{
-    max-width: 78%;
+ //   max-width: 78%;
 }
 
 #aboutText{
@@ -252,43 +249,43 @@ type="color" default="#e5e5e5" value="#e5e5e5">
 <Variable name="textFont" description="Text Font"
 type="font" 
 default="normal normal 75% verdana,arial,times,'Trebuchet MS',Sans-serif" 
-  value="normal normal 75% verdana,arial,times,'Trebuchet MS',Sans-serif">
+  value="normal normal 12px verdana">
 <Variable name="dateHeaderFont" description="Date Header Font"
 type="font" 
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
-  value="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif">
+  value="normal normal 12px verdana">
 <Variable name="postTitleFont" description="Post Title Font"
 type="font" 
 default="normal bold 24px georgia,verdana,'Trebuchet MS',cambria,Sans-serif" 
-  value="normal bold 24px georgia,verdana,'Trebuchet MS',cambria,Sans-serif">
+  value="normal bold 24px georgia">
 <Variable name="postTextFont" description="Post Text Font" 
 type="font"
 default="normal normal 16px Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif"
-  value="normal normal 16px Arvo, 'Josefin Sans', Georgia, Allerta,Sans-serif">
+  value="normal normal 16px Georgia">
 <Variable name="quoteFont" description="Blog Quote Font"
 type="font" 
 default="italic normal 80% verdana,arial,times,'Trebuchet MS',Sans-serif" 
-  value="italic normal 80% verdana,arial,times,'Trebuchet MS',Sans-serif">
+  value="italic normal 12px verdana">
 <Variable name="postfooterTextFont" description="Post-Footer Text Font"
 type="font" 
 default="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif" 
-  value="normal normal 95% verdana,tahoma,garamond,helvetica,Sans-serif">
+  value="normal normal 11px verdana">
 <Variable name="postfooterTitleFont" description="Post-Footer Title Font"
 type="font"
 default="normal bold 140% verdana, tahoma, garamond, helvetica, Sans-serif"
-  value="normal bold 140% verdana, tahoma, garamond, helvetica, Sans-serif">  
+  value="normal bold 18px verdana">  
 <Variable name="postfooterAuthorFont" description="Post-Footer Author Font"
 type="font"
 default="normal bold 130% verdana, tahoma, garamond, helvetica, Sans-serif"
-  value="normal bold 130% verdana, tahoma, garamond, helvetica, Sans-serif">
+  value="normal bold 16px verdana">
 <Variable name="commentTextFont" description="Comment Text Font"
 type="font" 
 default="normal normal 100% tahoma,garamond,helvetica,Sans-serif" 
-  value="normal normal 100% tahoma,garamond,helvetica,Sans-serif">
+  value="normal normal 12px tahoma">
 <Variable name="footerTextFont" description="Footer Text Font"
 type="font" 
 default="normal normal 100% arial, tahoma, garamond, helvetica, Sans-serif" 
-  value="normal normal 100% arial, tahoma, garamond, helvetica, Sans-serif">
+  value="normal normal 12px arial">
 */
 
 /* -----   GLOBAL   ----- */
@@ -320,7 +317,7 @@ body{
 }
 
 #blog-pager-newer-link a, #blog-pager-newer-link a:visited{
-	margin-left: 5em;
+//	margin-left: 5em;
 	padding: 3px 8px;	
 	display: inline-block;
 	text-align: center;		
@@ -333,7 +330,7 @@ body{
 }
 
 #blog-pager-older-link a, #blog-pager-older-link a:visited{
-	margin-right: 5em;
+//	margin-right: 5em;
 	padding: 3px 8px;	
 	display: inline-block;
 	text-align: center;		
@@ -370,6 +367,7 @@ a, a:visited{
 
 a:hover{
 	color: $mainHoverLinkColor;
+	text-decoration: none;
 }
 
 /* -----   HEADER   ----- */
@@ -669,6 +667,10 @@ h2.date-header {
 	overflow: hidden; /* fix for long non-text content breaking IE sidebar float */
 }
 
+.sidebar h2{
+	font: normal bold 20px verdana;
+}
+
 .sidebar ul{
 	margin: 2.5em 0 30px;
 	padding: 12px 12px 0;
@@ -755,7 +757,7 @@ blockquote p{
 	border-top: 1px dotted $dotColor;	
 }
 
-#Profile1 h2{
+#Profile1 h3{
 	margin: 0px;
 	padding: 0px;
 }
@@ -766,7 +768,7 @@ blockquote p{
 	display: block;
 	float: right;
 	clear: both;
-	border-radius: 50%;
+//	border-radius: 50%;
 }
 
 .profile-datablock { 
@@ -1098,7 +1100,7 @@ blockquote p{
 									</h4>
 									<dl expr:class='data:post.avatarIndentClass' id='comments-block'>
 									  <b:loop values='data:post.comments' var='comment'>
-										<dt class='comment-author' expr:id='"comment-" + data:comment.id'>
+										<dt class='comment-author img-circle' expr:id='"comment-" + data:comment.id'>
 										  <a expr:name='"comment-" + data:comment.id'/>
 										  <b:if cond='data:blog.enabledCommentProfileImages'>
 											<data:comment.authorAvatarImage/>
@@ -1205,7 +1207,7 @@ blockquote p{
 								<div class='widget-content'>
 								  <ul>
 									<b:loop values='data:labels' var='label'>
-									  <li class="btn">
+									  <li>
 										<b:if cond='data:blog.url == data:label.url'>
 										  <data:label.name/>
 										<b:else/>
@@ -1231,7 +1233,7 @@ blockquote p{
 									</ul>
 								  <b:else/> <!-- normal blog profile -->
 									<b:if cond='data:photo.url != ""'>
-									  <a href="http://rachel-mendes.blogspot.com.br/p/about-me.html"><img class='profile-img' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/></a>
+									  <a href="http://rachel-mendes.blogspot.com.br/p/about-me.html"><img class='profile-img img-circle' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/></a>
 									</b:if>
 									<dl class='profile-datablock'>
 									  <dt class='profile-data'>
